@@ -1,0 +1,11 @@
+{
+  "name": "drupal/entity_events",
+  "description": "Eventos custom para entidades.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "drupal/core": "^9.4 || ^10"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

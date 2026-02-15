@@ -1,0 +1,6 @@
+name: 'Entity Events'
+type: module
+description: 'Eventos custom para entidades.'
+core_version_requirement: ^9.4 || ^10
+version: 1.0.0
+package: Hooks

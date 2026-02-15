@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function entity_events_entity_insert(EntityInterface $entity): void {
+  \Drupal::service('entity_events.entity_dispatcher')
+    ->dispatchPostSave($entity, TRUE);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function entity_events_entity_update(EntityInterface $entity): void {
+  \Drupal::service('entity_events.entity_dispatcher')
+    ->dispatchPostSave($entity, FALSE);
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function entity_events_entity_presave(EntityInterface $entity): void {
+  \Drupal::service('entity_events.entity_dispatcher')
+    ->dispatchPreSave($entity, $entity->isNew());
+}
